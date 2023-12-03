@@ -1,0 +1,10 @@
+{
+  "screenofnibel": {
+    "subtitle": "screenofnibel.menu",
+    "sounds": [
+      {
+        "name": "screenofnibel:screenofnibel"
+      }
+    ]
+  }
+}

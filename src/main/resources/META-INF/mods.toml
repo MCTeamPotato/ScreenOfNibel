@@ -1,0 +1,12 @@
+modLoader = "javafml"
+loaderVersion = "[36,)"
+license = "MIT"
+
+[[mods]]
+modId = "screenofnibel"
+version = "${version}"
+displayName = "ScreenOfNibel"
+authors = "TeamPotato"
+description = '''
+A Minecraft Mod.
+'''
