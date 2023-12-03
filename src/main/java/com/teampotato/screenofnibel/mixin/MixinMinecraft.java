@@ -2,11 +2,9 @@ package com.teampotato.screenofnibel.mixin;
 
 import com.teampotato.screenofnibel.ScreenOfNibel;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.Options;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.TitleScreen;
 import net.minecraft.sounds.Music;
-import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
@@ -21,8 +19,6 @@ public abstract class MixinMinecraft {
     @Unique private static Music MUSIC_OF_NIBEL = null;
 
     @Shadow @Nullable public Screen screen;
-
-    @Shadow @Final public Options options;
 
     @Inject(method = "getSituationalMusic", at = @At("HEAD"), cancellable = true)
     private void screenOfNibel$getSituationalMusic(CallbackInfoReturnable<Music> cir) {
