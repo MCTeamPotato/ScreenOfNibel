@@ -25,7 +25,7 @@ public abstract class MixinMinecraft {
         cir.setReturnValue(MUSIC_OF_NIBEL);
     }
 
-    @Inject(method = "getSituationalMusic", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;dimension()Lnet/minecraft/resources/ResourceKey;", shift = At.Shift.BEFORE), cancellable = true)
+    @Inject(method = "getSituationalMusic", at = @At(value = "INVOKE", ordinal = 0, target = "Lnet/minecraft/world/level/Level;dimension()Lnet/minecraft/resources/ResourceKey;", shift = At.Shift.BEFORE), cancellable = true)
     private void screenOfNibel$playNibelOnLoadingWorld(CallbackInfoReturnable<Music> cir) {
         if (MUSIC_OF_NIBEL == null) MUSIC_OF_NIBEL = new Music(ScreenOfNibel.SOUND_EVENT_OF_NIBEL.get(), 0, 0, true);
         if (this.screen instanceof LevelLoadingScreen) cir.setReturnValue(MUSIC_OF_NIBEL);
